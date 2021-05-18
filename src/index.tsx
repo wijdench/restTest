@@ -1,13 +1,16 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { HashRouter } from 'react-router-dom';
+import { CssBaseline } from '@material-ui/core';
+import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 
+const baseUrl = document.getElementsByTagName('base')[0]?.getAttribute('href') || '/';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <HashRouter basename={baseUrl}>
+    <CssBaseline />
     <App />
-  </React.StrictMode>,
+  </HashRouter>,
   document.getElementById('root')
 );
 
